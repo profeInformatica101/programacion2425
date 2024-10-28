@@ -8,9 +8,9 @@ public static void main(String[] args) {
 	
 	int n = leerDificultad();
 	
-	//Genero una tabla de 4 elementos aleatorios que tienen que adivinar
+	//Genero una tabla de n elementos aleatorios que tienen que adivinar
 	int[] tablaPin = creaTablaPin(n);
-	// Imprimo la tabla de 4 elementos para PRUEBAS
+	// Imprimo la tabla de n elementos para PRUEBAS
 	System.out.println("Tabla PIN: de " + n + " elementos.");
 	imprimirTabla(tablaPin);
 	
