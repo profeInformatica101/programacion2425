@@ -1,10 +1,68 @@
 package ejercicios;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Ejercicio5 {
 public static void main(String[] args) {
-	imprimirTabla(creaTablaPin(3));
+	//imprimirTabla(creaTablaPin(3));
+	
+	int[] tablaPin = creaTablaPin(4);
+	System.out.println("Tabla PIN: ");
+	imprimirTabla(tablaPin);
+	
+	int[] tabla_user;
+	String[] tabla_comprobacion;
+	do {
+		
+		tabla_user =leerValores(4);
+		tabla_comprobacion = comprobarValores(tabla_user, tablaPin);
+		
+	}while(!sonTablasIguales(tabla_comprobacion));
+	
+	System.out.println("Lo has acertado!");
+	
+}
+
+
+
+
+public static String[] comprobarValores(int[] tabla_user, int[] tabla_pin) {
+	String [] res = new String[tabla_user.length];
+	for(int i=0; i<tabla_user.length; i++) {
+		if(tabla_user[i]>tabla_pin[i]) {
+			res[i] = ">";
+		}else if(tabla_user[i]<tabla_pin[i]) {
+			res[i] = "<";
+		}else {
+			res[i] = "=";
+		}
+	}
+	
+	imprimirTabla(res);
+	return res;
+}
+
+public static int[] leerValores(int n) {
+	 Scanner sc= new Scanner(System.in);
+	 int[] res = new int[n];
+	 System.out.println("Dime valores:");
+	 for(int i=0; i<n; i++) {
+		res[i] = sc.nextInt();
+	}
+	 
+	 return res;
+
+}
+
+public static boolean sonTablasIguales(String[] tabla_comprobacion) {
+	boolean dev = true;
+	for(String comp : tabla_comprobacion) {
+		if(!comp.equals("=")) {
+			return false;
+		}
+	}
+	return dev;
 }
 
 
@@ -26,10 +84,23 @@ public static int devolverEnteroAleatorio() {
 }
 
 
-public static void imprimirTabla(int[] tabla) {
-	for(int i = 0; i< tabla.length; i++) {
-		System.out.println(tabla[i]);
+public static void imprimirTabla(Object[] tablaPin) {
+	String res = "[";
+	for(int i = 0; i< tablaPin.length; i++) {
+		res = res + " " + tablaPin[i] + " ";
 	}
+	res = res + "]";
+	System.out.println(res);
+}
+
+private static void imprimirTabla(int[] tablaPin) {
+	String res = "[";
+	for(int i = 0; i< tablaPin.length; i++) {
+		res = res + " " + tablaPin[i] + " ";
+	}
+	res = res + "]";
+	System.out.println(res);
 	
 }
+
 }
