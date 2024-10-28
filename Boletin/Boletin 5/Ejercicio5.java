@@ -5,18 +5,20 @@ import java.util.Scanner;
 
 public class Ejercicio5 {
 public static void main(String[] args) {
-
+	
+	int n = leerDificultad();
+	
 	//Genero una tabla de 4 elementos aleatorios que tienen que adivinar
-	int[] tablaPin = creaTablaPin(4);
+	int[] tablaPin = creaTablaPin(n);
 	// Imprimo la tabla de 4 elementos para PRUEBAS
-	System.out.println("Tabla PIN: ");
+	System.out.println("Tabla PIN: de " + n + " elementos.");
 	imprimirTabla(tablaPin);
 	
 	int[] tabla_user;
 	String[] tabla_comprobacion;
 	do {
 		// Leo los valores
-		tabla_user =leerValores(4);
+		tabla_user =leerValores(n);
 		// Genero una tabla con las comparativas
 		tabla_comprobacion = comprobarValores(tabla_user, tablaPin);
 		
@@ -28,7 +30,20 @@ public static void main(String[] args) {
 
 
 
+/**
+ * Devuelve una tabla de String indicando la comparación.
+ * 
+ * Ejemplo:
+ * + Para tabla_pin --> [ 1  4  0  1 ]
+ * + Para tabla_user --> [1 3 1 2]
+ * 
+ * Devolvería
+ * [ =  <  >  > ]
 
+ * @param tabla_user
+ * @param tabla_pin
+ * @return
+ */
 public static String[] comprobarValores(int[] tabla_user, int[] tabla_pin) {
 	String [] res = new String[tabla_user.length];
 	for(int i=0; i<tabla_user.length; i++) {
@@ -56,7 +71,15 @@ public static int[] leerValores(int n) {
 	 return res;
 
 }
-
+public static int leerDificultad() {
+	 Scanner sc= new Scanner(System.in);
+	 int n = -1;
+	 do {
+		 System.out.println("Dime el nivel dificultad (3 y 20)");
+		 n = sc.nextInt();
+	 }while(n > 0 && n > 20);
+	 return n;
+}
 public static boolean sonTablasIguales(String[] tabla_comprobacion) {
 	boolean dev = true;
 	for(String comp : tabla_comprobacion) {
