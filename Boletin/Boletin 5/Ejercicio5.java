@@ -5,21 +5,23 @@ import java.util.Scanner;
 
 public class Ejercicio5 {
 public static void main(String[] args) {
-	//imprimirTabla(creaTablaPin(3));
-	
+
+	//Genero una tabla de 4 elementos aleatorios que tienen que adivinar
 	int[] tablaPin = creaTablaPin(4);
+	// Imprimo la tabla de 4 elementos para PRUEBAS
 	System.out.println("Tabla PIN: ");
 	imprimirTabla(tablaPin);
 	
 	int[] tabla_user;
 	String[] tabla_comprobacion;
 	do {
-		
+		// Leo los valores
 		tabla_user =leerValores(4);
+		// Genero una tabla con las comparativas
 		tabla_comprobacion = comprobarValores(tabla_user, tablaPin);
 		
 	}while(!sonTablasIguales(tabla_comprobacion));
-	
+	//HAS TERMINADO
 	System.out.println("Lo has acertado!");
 	
 }
