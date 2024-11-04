@@ -84,7 +84,7 @@ Fusiona llevando dos índices dependiendo del tamaño
 	/**
 	Realiza fusión realizando la estrategia de copiado de la tabla 1 y a continuación completo con la tabla 2
 	*/
-	private static int[] fusionar(int[] tab1, int[] tab2) {
+	private static int[] fusionar_alternativa(int[] tab1, int[] tab2) {
 		//Inicializamos las variables
 		int tab_fusionada_tam = tab1.length + tab2.length;
 		//int[] tab_fusinada = new int[tab_fusionada_tam];
