@@ -1,18 +1,17 @@
 package com;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Ejercicio7 {
 
 	public static void main(String[] args) {
-		int[] tab1 = {4,5,3,2,1};
-		int[] tab2 = {20,23,2,1,50,100,3};
+		//int[] tab1 = {4,5,3,2,1};
+		//int[] tab2 = {20,23,2,1,50,100,3};
 		
-		//imprime(tab1);
-		ordena(tab1);
-		ordena(tab2);
-		//imprime(tab1);
-		
+		int[] tab1 = leerTabla(6);
+		int[] tab2 = leerTabla(6);
+			
 		imprime(fusionar(tab1, tab2));
 		
 
@@ -22,8 +21,11 @@ public class Ejercicio7 {
 		//Inicializamos las variables
 		int tab_fusionada_tam = tab1.length + tab2.length;
 		int indice_tab1 = 0, indice_tab2=0, indice_res = 0;
-	
+		
 		int[] res = new int[tab_fusionada_tam];
+		
+		ordena(tab1);
+		ordena(tab2);
 		
 		//Realizar mientras los indices sean menores
 		do {
@@ -53,14 +55,29 @@ public class Ejercicio7 {
 		return res;
 		
 	}
-
+	// Función que nos permite ordenar la tabla
 	public static void ordena(int[] tab) {
 		Arrays.sort(tab);
 		
 	}
 	
+	// Función que nos imprime una tabla
 	public static void imprime(int[] tab) {
 		System.out.println(Arrays.toString(tab));
+	}
+	
+	
+	public static int[] leerTabla(int n) {
+		Scanner sc = new Scanner(System.in);
+		int[] dev = new int[n];
+		
+		System.out.println("Dime los " + n + " números");
+		for(int i=0; i<n; i++) {
+			dev[i] = sc.nextInt();
+		}
+		
+		return dev;
+		
 	}
 	
 
