@@ -16,7 +16,9 @@ public class Ejercicio7 {
 		
 
 	}
-
+/**
+Fusiona llevando dos índices dependiendo del tamaño
+*/
 	private static int[] fusionar(int[] tab1, int[] tab2) {
 		//Inicializamos las variables
 		int tab_fusionada_tam = tab1.length + tab2.length;
@@ -79,6 +81,21 @@ public class Ejercicio7 {
 		return dev;
 		
 	}
-	
-
+	/**
+	Realiza fusión realizando la estrategia de copiado de la tabla 1 y a continuación completo con la tabla 2
+	*/
+	private static int[] fusionar(int[] tab1, int[] tab2) {
+		//Inicializamos las variables
+		int tab_fusionada_tam = tab1.length + tab2.length;
+		//int[] tab_fusinada = new int[tab_fusionada_tam];
+		int[] tab_fusionada = Arrays.copyOf(tab1, tab_fusionada_tam);
+		
+		int j = 0;
+		for(int i=tab1.length; i<tab_fusionada.length; i++) {
+			tab_fusionada[i] = tab2[j];
+			j++;
+		}
+		ordena(tab_fusionada);
+		return tab_fusionada;
+	}
 }
