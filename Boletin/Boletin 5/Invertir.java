@@ -21,9 +21,10 @@ public class Invertir {
 		//int[] dev = new int[tab.length];
 		int aux;
 		for(int i=(tab.length-1)/2; i>=0; i--) {
-			
-			aux = tab[i];
+			//Dos indices: i y indice
 			int indice = tab.length - i - 1;
+			//Intercambio de datos 
+			aux = tab[i];
 			tab[i] = tab[indice];
 			tab[indice] = aux;
 			
