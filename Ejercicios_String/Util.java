@@ -6,7 +6,7 @@ public class Util {
 
 	
 	public static String leerCadena() {
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in, , "utf-8");
 		System.out.println("Inserta una cadena: \n");
 		String dev =sc.nextLine();
 		return dev;
