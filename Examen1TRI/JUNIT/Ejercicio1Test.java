@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+1. Realizar la función inicialesMayusculas(String texto) que devuelva una nueva cadena
+idéntica a texto pero con las iniciales de todas las palabras en mayúaculas.
+*/
 public class Ejercicio1Test {
     @Test
     public void testInicialesMayusculas() {
