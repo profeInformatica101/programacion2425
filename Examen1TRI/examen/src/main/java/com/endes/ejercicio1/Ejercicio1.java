@@ -1,4 +1,4 @@
-package com.endes;
+package com.endes.ejercicio1;
 
 public class Ejercicio1 {
 
